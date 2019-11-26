@@ -4,8 +4,8 @@ services:
   - docker
 
 script:
-  - docker build -t codebase ./codebase
-  - docker build -t app ./app
+  - docker build -t cabhiram/codebase ./codebase
+  - docker build -t cabhiram/app ./app
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push $DOCKER_ID/codebase
   - docker push $DOCKER_ID/app
