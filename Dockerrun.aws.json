@@ -5,7 +5,7 @@
 			"image": "cabhiram/codebase",
 			"hostname": "codebase",
 			"essential": false,
-      "memory": 500
+      "memory": 128
 		},
 		{
 			"name": "app",
@@ -16,7 +16,7 @@
 				"hostPort": 80,
 				"containerPort": 7000
 			}],
-      "memory": 500
+      "memory": 128
 		}
 	]
 }
