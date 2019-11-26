@@ -1,0 +1,12 @@
+sudo : required
+
+services:
+  - docker
+
+script:
+  - docker build -t codebase ./codebase
+  - docker build -t app ./app
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - docker push codebase
+  - docker push app
+  
