@@ -9,3 +9,15 @@ script:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push $DOCKER_ID/codebase
   - docker push $DOCKER_ID/app
+
+deploy:
+  provider: elasticbeanstalk
+  region: ap-south-1
+  app: pythonwebapp
+  bucket_name: elasticbeanstalk-ap-south-1-068656303515
+  bucket_path: pythonwebapp
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: $AWS_SECRET_KEY

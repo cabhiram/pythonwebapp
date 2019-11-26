@@ -1,0 +1,22 @@
+{
+	"AWSEBDockerrunVersion": 2,
+	"containerDefinitions": [{
+			"name": "codebase",
+			"image": "cabhiram/codebase",
+			"hostname": "codebase",
+			"essential": false,
+      "memory": 1024
+		},
+		{
+			"name": "app",
+			"image": "cabhiram/app",
+			"hostname": "app",
+			"essential": true,
+			"portMappings": [{
+				"hostPort": 80,
+				"containerPort": 80
+			}],
+      "memory": 1024
+		}
+	]
+}
