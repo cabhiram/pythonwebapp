@@ -10,15 +10,15 @@ script:
   - docker push $DOCKER_ID/codebase
   - docker push $DOCKER_ID/app
 
-deploy:
-  provider: elasticbeanstalk
-  region: ap-south-1
-  app: pythonwebapp
-  env: Pythonwebapp-env
-  bucket_name: elasticbeanstalk-ap-south-1-068656303515
-  bucket_path: pythonwebapp
-  on:
-    branch: master
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key:
-    secure: $AWS_SECRET_KEY
+# deploy:
+#   provider: elasticbeanstalk
+#   region: ap-south-1
+#   app: pythonwebapp
+#   env: Pythonwebapp-env
+#   bucket_name: elasticbeanstalk-ap-south-1-068656303515
+#   bucket_path: pythonwebapp
+#   on:
+#     branch: master
+#   access_key_id: $AWS_ACCESS_KEY
+#   secret_access_key:
+#     secure: $AWS_SECRET_KEY
